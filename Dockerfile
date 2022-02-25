@@ -2,7 +2,7 @@ FROM ubuntu:focal
 
 WORKDIR /app
 
-RUN apt-get install git php php-curl composer && rm -rf /tmp/*
+RUN apt-get update && apt-get install git php php-curl composer && rm -rf /tmp/*
 
 RUN git clone https://github.com/DenverCoder1/github-readme-streak-stats.git
 
