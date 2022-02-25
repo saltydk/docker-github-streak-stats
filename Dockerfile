@@ -1,14 +1,10 @@
-FROM ubuntu:focal
+FROM php:8
 
 ARG DEBIAN_FRONTEND="noninteractive"
 
 WORKDIR /app
 
-ENV TZ="Etc/UTC" LANG="en_US.UTF-8" LANGUAGE="en_US:en" LC_ALL="en_US.UTF-8" UMASK="002"
-
-RUN apt-get update && apt-get install git php php-curl composer -y && apt autoremove -y && \
-    apt clean && \
-    rm -rf /tmp/* /var/lib/apt/lists/* /var/tmp/*
+ENV TZ="Etc/UTC"
 
 RUN git clone https://github.com/DenverCoder1/github-readme-streak-stats.git
 
