@@ -6,7 +6,7 @@ WORKDIR /app
 
 ENV TZ="Etc/UTC"
 
-RUN git clone https://github.com/DenverCoder1/github-readme-streak-stats.git
+RUN apt-get update && apt-get install git -y && git clone https://github.com/DenverCoder1/github-readme-streak-stats.git
 
 WORKDIR /app/github-readme-streak-stats
 
